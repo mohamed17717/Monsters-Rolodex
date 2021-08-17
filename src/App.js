@@ -12,6 +12,12 @@ class App extends Component {
       monsters: [],
       searchQuery: "",
     };
+
+    // this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange = (e) => {
+    this.setState({ searchQuery: e.target.value })
   }
 
   componentDidMount() {
@@ -29,8 +35,10 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1>Monsters Rolodex</h1>
+
         <SearchBox
-          handleChange={(e) => this.setState({ searchQuery: e.target.value })}
+          handleChange={this.handleChange}
           placeholder="Search for a monster..."
         />
 
